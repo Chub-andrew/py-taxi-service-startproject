@@ -10,7 +10,7 @@ class Car(models.Model):
         settings.AUTH_USER_MODEL, related_name="cars"
     )
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.manufacturer} {self.model}"
 
 
@@ -20,7 +20,7 @@ class Driver(AbstractUser):
     class Meta:
         ordering = ("username",)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.username}: {self.first_name} {self.last_name}"
 
 
@@ -28,6 +28,5 @@ class Manufacturer(models.Model):
     name = models.CharField(max_length=50, unique=True)
     country = models.CharField(max_length=50)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name} country: {self.country}"
-
